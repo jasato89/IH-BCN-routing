@@ -10,6 +10,8 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { PostItemComponent } from './components/post-item/post-item.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { ErrorComponent } from './components/error/error.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { ErrorComponent } from './components/error/error.component';
     PostListComponent,
     PostItemComponent,
     PostDetailComponent,
-    ErrorComponent
+    ErrorComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

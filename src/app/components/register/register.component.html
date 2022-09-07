@@ -1,0 +1,31 @@
+<div class="container">
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+
+        <input type="text" placeholder="Name..." formControlName="name">
+        <p class="error-msg" *ngIf="nameInput.invalid && (nameInput.touched || nameInput.dirty)">Name is invalid</p>
+
+        <input type="text" placeholder="Email..." formControlName="email">
+                <p class="error-msg" *ngIf="emailInput.invalid && (emailInput.touched || emailInput.dirty)">Email is invalid</p>
+
+
+        <input type="number" placeholder="Age..." formControlName="age">
+        <p class="error-msg" *ngIf="ageInput.invalid && (ageInput.touched || ageInput.dirty)">Invalid age</p>
+
+
+        <input type="password" placeholder="Password..." formControlName="password">
+        <p class="error-msg" *ngIf="passwordInput.invalid && (passwordInput.touched || passwordInput.dirty)">Invalid</p>
+
+
+
+        <select name="gender" formControlName="gender">
+
+            <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+            
+        </select>
+        <p class="error-msg" *ngIf="genderInput.invalid && genderInput.touched">Select a valid gender</p>
+
+        <button type="submit" [disabled]="registerForm.invalid">Enviar</button>
+
+    </form>
+</div>
